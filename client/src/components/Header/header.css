@@ -1,0 +1,24 @@
+.header {
+    margin-top: 130px;
+}
+  
+.headerTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lato", serif;
+    color: #444;
+}
+  
+.headerTitleLarge {
+    position: absolute;
+    top: 20%;
+    font-size: 50px;
+}
+
+.headerImg {
+    width: 100%;
+    height: 450px;
+    margin-top: 80px;
+    object-fit: cover;
+  }
