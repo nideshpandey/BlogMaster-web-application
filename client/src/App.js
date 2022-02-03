@@ -17,9 +17,7 @@ function App() {
         <Route path="/login"> {user ? <Homepage /> : <Login />} </Route>
         <Route path="/register"> {user ? <Homepage /> : <Register />} </Route>
         <Route path="/write"> {user ? <Write /> : <Register />} </Route>
-        <Route path="/singlepost/:postId">
-          <SinglePage />
-        </Route>
+        <Route path="/post/:postId"> <SinglePage /> </Route>
       </Switch>
     </Router>
   );

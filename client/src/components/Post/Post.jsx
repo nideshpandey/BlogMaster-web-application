@@ -1,26 +1,30 @@
 import './post.css';
+import { Link } from 'react-router-dom';
 
-export default function Post() {
+export default function Post({ post }) {
     return (
         <div className='post'>
-            <img className="postImg" src='https://images.pexels.com/photos/261579/pexels-photo-261579.jpeg?cs=srgb&dl=pexels-pixabay-261579.jpg&fm=jpg' alt="Any Photo "/>
+            {post.photo &&
+                (<img className="postImg" src={post.photo} alt="Any Photo " />)
+            }
             <div className="postInfo">
-                <span className='postTitle'>THE POST TITLE</span>
+                <div className="postCat">
+                    {post.categories.map((c) => (
+                        <span className="postCat">{c.name}</span>
+                    ))}
+                </div>
+                <Link to={`/post/${post._id}`} className='link'>
+                    <span className='postTitle'>{post.title}</span>
+                </Link>
                 <hr />
-                <span className="postDate">1 HOUR AGO</span>
+                <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
             </div>
             <p className="postDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Vel soluta magnam aliquam numquam?
-                Itaque temporibus minima veniam tempora in, nemo unde quas quaerat?
-                Sit eligendi sint recusandae fugiat officiis minus? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Vel soluta magnam aliquam numquam?
-                Itaque temporibus minima veniam tempora in, nemo unde quas quaerat?
-                Sit eligendi sint recusandae fugiat officiis minus? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Vel soluta magnam aliquam numquam?
-                Itaque temporibus minima veniam tempora in, nemo unde quas quaerat?
-                Sit eligendi sint recusandae fugiat officiis minus?
+                {post.description}
             </p>
         </div>
     );
 }
+
+
+// blogPhoto = 'https://images.pexels.com/photos/261579/pexels-photo-261579.jpeg?cs=srgb&dl=pexels-pixabay-261579.jpg&fm=jpg'

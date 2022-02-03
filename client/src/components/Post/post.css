@@ -50,3 +50,14 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   }
+
+  .postCat {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #be9656;
+    line-height: 19px;
+    margin-top: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
