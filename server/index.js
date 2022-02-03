@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/post");
+const userRoute = require("./routes/user");
 const categoryRoute = require("./routes/category");
 const multer = require("multer");
 
@@ -33,6 +34,7 @@ app.post("/server/upload", upload.single("file"), (req, res) => {
 
 app.use("/server/auth", authRoute);
 app.use("/server/post", postRoute);
+app.use("server/user", userRoute);
 app.use("/server/category", categoryRoute);
 
 
