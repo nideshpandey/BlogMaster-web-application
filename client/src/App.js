@@ -27,10 +27,3 @@ function App() {
 
 export default App;
 
-    // <div className="App">
-    //   <Navbar />
-    //   {/* <Login /> */}
-    //   <Register />
-    //   {/* <Write /> */}
-    //   {/* <Homepage /> */}
-    // </div>
